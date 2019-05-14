@@ -1,0 +1,24 @@
+﻿@using LSScraper.Api
+@model IEnumerable<Article>
+
+<div class="row">
+    <table class="table table-bordered">
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Date Posted</th>
+        </tr>
+
+        @foreach (var post in Model)
+        {           
+            <tr>
+                <td><img style="width: 150px; max-height: 200px;" src="@post.ImageUrl" /></td>
+                <td>
+                    <a href="@post.Url" target="_blank">@post.Title</a>
+                </td>
+                <td>@post.DatePosted</td>
+            </tr>
+        }
+        </table>
+
+</div>
